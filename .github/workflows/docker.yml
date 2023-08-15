@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Deploy to EC2
         run: |
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
           ssh -o StrictHostKeyChecking=no ec2-user@18.221.68.221 "docker pull wry0313/personal-website-server:latest && docker run -d -p 8080:8080 wry0313/personal-website-server:latest"
         env:
           PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
