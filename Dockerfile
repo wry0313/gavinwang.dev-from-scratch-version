@@ -29,4 +29,3 @@ COPY --from=builder /app/static ./static
 
 # Command to run the Go binary
 CMD ["./server"]
-
