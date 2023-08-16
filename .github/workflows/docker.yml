@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
-          ssh -o StrictHostKeyChecking=no -i private_key.pem ec2-user@18.221.68.221 "
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ec2-user@3.13.46.207 "
             docker stop \$(docker ps -q --filter 'publish=8080') || true &&
             docker rm \$(docker ps -a -q --filter 'publish=8080') || true &&
             docker pull wry0313/personal-website-server:latest && 
