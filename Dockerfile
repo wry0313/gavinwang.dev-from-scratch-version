@@ -12,7 +12,7 @@ COPY . .
 
 # Install TailwindCSS and generate the CSS
 RUN npm install -D tailwindcss
-RUN npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css
+RUN npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify
 
 # Compile the Go app
 RUN go build -o server .
