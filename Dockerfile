@@ -19,9 +19,8 @@ WORKDIR /root/
 # Copy the compiled Go binary from the builder stage to the current stage
 COPY --from=builder /app/server .
 
-# Copy static assets
-COPY ./static /root/static
+# Copy static assets to the same directory as the server binary
+COPY ./static ./static
 
 # Command to run the Go binary
 CMD ["./server"]
-
