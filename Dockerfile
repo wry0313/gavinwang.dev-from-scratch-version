@@ -1,26 +1,32 @@
-# Use the Alpine variant of the official golang image as the builder stage
+# Build stage: Installing Node.js, TailwindCSS, and building the Go application
 FROM golang:1.20-alpine AS builder
+
+# Installing Node.js and npm
+RUN apk add --update nodejs npm
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the source from the current directory to the working Directory inside the container
+# Copy the entire project directory
 COPY . .
 
-# Compile the app
+# Install TailwindCSS and generate the CSS
+RUN npm install -D tailwindcss
+RUN npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css
+
+# Compile the Go app
 RUN go build -o server .
 
-# Use the lightweight Alpine image for the final stage
+# Final stage: Create the final image with the Go binary and necessary assets
 FROM alpine:latest
 
 # Set the working directory
 WORKDIR /root/
 
-# Copy the compiled Go binary from the builder stage to the current stage
+# Copy the Go binary and static assets from the builder stage
 COPY --from=builder /app/server .
-
-# Copy static assets to the same directory as the server binary
-COPY ./static ./static
+COPY --from=builder /app/static ./static
 
 # Command to run the Go binary
 CMD ["./server"]
+
