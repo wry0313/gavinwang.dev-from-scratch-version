@@ -2,7 +2,7 @@
 FROM golang:1.20-alpine AS builder
 
 # Installing Node.js and npm
-RUN apk add --update nodejs npm
+# RUN apk add --update nodejs npm
 
 # Set the working directory inside the container
 WORKDIR /app
