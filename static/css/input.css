@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'JetBrains Mono';
-    src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'JetBrains Mono';
-    src: url('/fonts/JetBrainsMono-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 
 body {
-    font-family: 'JetBrains Mono';
+  font-family: "Jetbrains Mono", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
 }

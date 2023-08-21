@@ -4,34 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gavin</title>
-    <link rel="stylesheet" type="text/css" href="css/output.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/output.css" /> -->
   </head>
-  <body>
-    <h1 class="text-2xl text-sky-600">
-      <span class="font-semibold">Gavin</span> Wang
-    </h1>
-    <div class="text-sky-800">
-      <p>Hi!</p>
+  <style>
+          body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        padding: 3vh 10vw;
+        color: #121314;
+            
+      }
+      h1 {
+        font-size: 4.5em;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 1.6em;
+        font-weight: 300;
+        line-height: 1.4;
+        max-width: 28em;
+      }
+      a {
+        text-decoration: none;
+        white-space: nowrap;
+        color: #121314;
+        position: relative;
+      }
+      a:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 66%;
+        left: -0.1em;
+        right: -0.1em;
+        bottom: 0;
+        transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        background-color: rgba(179, 204, 242, 0.5)
+      }
+      a:hover:after {
+        top: 0%;
+      }
+  </style>
+  <body class="py-[5vh] px-[10vw]  bg-sky-50">
+    <h1 class="text-5xl text-sky-600 font-semibold">Hello.</h1>
+    <h2 class="mt-4 text-3xl font-semibold">My name is Gavin Wang.</h2>
+    <div class="mt-4 text-lg max-w-[40em]">
       <p>
-        I an incoming undergraduate student at Northwestern. I plan to major in
-        (CS || CE &amp;&amp; Math). My expected graduation date is Spring &apos;27
+        I am an incoming undergraduate student at Northwestern. I plan to major
+        in (CS || CE) &amp;&amp; Mat  h. My expected graduation date is Spring
+        &apos;27
       </p>
       <p>
-        Currently I&apos;m a developer at Steno.ai doing mostly front-end work and
-        some api/database things
+        Currently I&apos;m a full-stack developer at Steno.ai doing front-end
+        work along with api/database things.
       </p>
       <p>
-        My interets right now are computer networking web3. I&apos;m obsessed with
-        low-level efficiency. Lastly, I&apos;m learning languages such as go
-        and rust.
+        I&apos;m really interested in building fast and scalable systems and
+        enjoy thinking about low level efficiency. Currently, I&apos;m learning
+        Go and Rust. You can check out my side projects on my
+        <a href="https://github.com/wry0313">Github</a>.
       </p>
       <p>
-        Feel free to reach out to me through email. I&apos;m quite responsive there :)
+        Outside of programming and schoolwork, I enjoy road cycling, listening
+        to R&B, and following the NBA.
       </p>
-  
-      <a href="mailto:gavinwang313@gmail.com"
-        >gavinwang313@gmail.com</a
-      >
+      <p>
+        Feel free to reach out to me through email. I&apos;m quite responsive
+        there :)
+      </p>
+      <a href="mailto:gavinwang313@gmail.com">gavinwang313@gmail.com</a>
+      <img src="dancing-gopher.gif" class="h-12 w-12" alt="dancing gopher" />
     </div>
   </body>
 </html>
